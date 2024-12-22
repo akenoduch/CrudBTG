@@ -7,8 +7,10 @@ namespace CrudBTG
         public App(ClientesPage clientesPage)
         {
             InitializeComponent();
+            Application.Current.UserAppTheme = AppTheme.Light;
             // MainPage = new AppShell(); // Desativado para iniciar com ClientesPage
             MainPage = new NavigationPage(clientesPage);
+
         }
     }
 }
