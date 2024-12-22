@@ -35,6 +35,7 @@
             Text="Idade" />
         <Entry
             Keyboard="Numeric"
+            MaxLength="2"
             Placeholder="Digite a idade"
             Text="{Binding AgeText}" />
 
