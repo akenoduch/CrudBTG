@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CrudBTG.Views.ClientesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:CrudBTG.ViewModels">
+
+    <VerticalStackLayout Padding="20">
+        <Label
+            Margin="0,0,0,10"
+            FontAttributes="Bold"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Text="Lista de Clientes" />
+
+        <CollectionView ItemsSource="{Binding Clientes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="0,5"
+                        Padding="10"
+                        BorderColor="LightGray"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <VerticalStackLayout Grid.Column="0">
+                                <HorizontalStackLayout>
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text="{Binding Name}" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text=" " />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text="{Binding Lastname}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label
+                                        FontAttributes="Italic"
+                                        FontSize="14"
+                                        Text="Idade: " />
+                                    <Label FontSize="14" Text="{Binding Age}" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label
+                                        FontAttributes="Italic"
+                                        FontSize="14"
+                                        Text="Endereço: " />
+                                    <Label FontSize="14" Text="{Binding Address}" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout
+                                Grid.Column="1"
+                                HorizontalOptions="End"
+                                VerticalOptions="Start">
+                                <ImageButton
+                                    Margin="5"
+                                    BackgroundColor="Transparent"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EditClienteCommand}"
+                                    CommandParameter="{Binding}"
+                                    HeightRequest="20"
+                                    Source="pencil_icon.png"
+                                    WidthRequest="20" />
+                                <ImageButton
+                                    Margin="5"
+                                    BackgroundColor="Transparent"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteClienteCommand}"
+                                    CommandParameter="{Binding}"
+                                    HeightRequest="20"
+                                    Source="trash_icon.png"
+                                    WidthRequest="20" />
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Button
+            Margin="0,20,0,0"
+            Command="{Binding AddClienteCommand}"
+            HorizontalOptions="Center"
+            Text="Adicionar Cliente" />
+    </VerticalStackLayout>
+</ContentPage>

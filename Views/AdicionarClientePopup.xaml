@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="CrudBTG.Views.AdicionarClientePopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <VerticalStackLayout
+        Padding="20"
+        BackgroundColor="White"
+        HeightRequest="500"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="300">
+        <Label
+            FontAttributes="Bold"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Text="{Binding Titulo}" />
+
+        <Label
+            Margin="0,10,0,0"
+            FontSize="14"
+            Text="Nome" />
+        <Entry Placeholder="Digite o nome" Text="{Binding NovoCliente.Name}" />
+
+        <Label
+            Margin="0,10,0,0"
+            FontSize="14"
+            Text="Sobrenome" />
+        <Entry Placeholder="Digite o sobrenome" Text="{Binding NovoCliente.Lastname}" />
+
+        <Label
+            Margin="0,10,0,0"
+            FontSize="14"
+            Text="Idade" />
+        <Entry
+            Keyboard="Numeric"
+            Placeholder="Digite a idade"
+            Text="{Binding AgeText}" />
+
+        <Label
+            Margin="0,10,0,0"
+            FontSize="14"
+            Text="Endereço (Cidade, UF, País)" />
+        <Entry Placeholder="Cidade, UF, País" Text="{Binding EnderecoCompleto}" />
+
+        <HorizontalStackLayout
+            Margin="0,20,0,0"
+            HorizontalOptions="Center"
+            Spacing="10">
+            <Button Command="{Binding CancelarCommand}" Text="Cancelar" />
+            <Button
+                Command="{Binding SalvarCommand}"
+                IsEnabled="{Binding IsSalvarEnabled}"
+                Text="Salvar" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</toolkit:Popup>
