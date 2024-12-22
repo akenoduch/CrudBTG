@@ -201,11 +201,11 @@ namespace CrudBTG.Views
         private void ValidateFields()
         {
             NameErro = string.IsNullOrWhiteSpace(NovoCliente.Name)
-                ? "O campo 'Name' é obrigatório."
+                ? "O campo 'Nome' é obrigatório."
                 : null;
 
             LastNameErro = string.IsNullOrWhiteSpace(NovoCliente.Lastname)
-                ? "O campo 'LastName' é obrigatório."
+                ? "O campo 'Sobrenome' é obrigatório."
                 : null;
 
             if (NovoCliente.Age <= 0)
@@ -219,7 +219,7 @@ namespace CrudBTG.Views
 
             EnderecoErro = enderecoValido
                 ? null
-                : "O endereço deve ter 3 partes (Cidade, UF, País) e terminar com 'Brasil'.";
+                : "O endereço deve ter 3 partes (Cidade, UF, País).";
 
             IsSalvarEnabled = string.IsNullOrWhiteSpace(NameErro)
                               && string.IsNullOrWhiteSpace(LastNameErro)
