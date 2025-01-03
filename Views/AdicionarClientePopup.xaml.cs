@@ -219,7 +219,7 @@ namespace CrudBTG.Views
 
             EnderecoErro = enderecoValido
                 ? null
-                : "O endereço deve ter 3 partes (Cidade, UF, País) e terminar com 'Brasil'.";
+                : "O endereço deve ter 3 partes (Cidade, UF, País).";
 
             IsSalvarEnabled = string.IsNullOrWhiteSpace(NameErro)
                               && string.IsNullOrWhiteSpace(LastNameErro)
