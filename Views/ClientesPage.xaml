@@ -10,10 +10,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="400" />
+                <RowDefinition Height="300" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Source="btg_pactual.png" />
+            <Image
+                Grid.Row="0"
+                Source="logo.png"
+                WidthRequest="200" />
             <Label
                 Grid.Row="1"
                 Margin="0,0,0,10"
@@ -36,7 +39,10 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 <VerticalStackLayout Grid.Column="0">
-                                    <HorizontalStackLayout>
+                                    <HorizontalStackLayout
+                                        HorizontalOptions="Start"
+                                        Spacing="5"
+                                        VerticalOptions="Center">
                                         <Label
                                             FontAttributes="Bold"
                                             FontSize="18"
@@ -44,24 +50,26 @@
                                         <Label
                                             FontAttributes="Bold"
                                             FontSize="18"
-                                            Text=" " />
-                                        <Label
-                                            FontAttributes="Bold"
-                                            FontSize="18"
                                             Text="{Binding Lastname}" />
                                     </HorizontalStackLayout>
-                                    <HorizontalStackLayout>
+                                    <HorizontalStackLayout
+                                        HorizontalOptions="Start"
+                                        Spacing="5"
+                                        VerticalOptions="Center">
                                         <Label
                                             FontAttributes="Italic"
                                             FontSize="14"
                                             Text="Idade: " />
                                         <Label FontSize="14" Text="{Binding Age}" />
                                     </HorizontalStackLayout>
-                                    <HorizontalStackLayout>
+                                    <HorizontalStackLayout
+                                        HorizontalOptions="Start"
+                                        Spacing="5"
+                                        VerticalOptions="Center">
                                         <Label
                                             FontAttributes="Italic"
                                             FontSize="14"
-                                            Text="Endereço: " />
+                                            Text="Endereço:" />
                                         <Label FontSize="14" Text="{Binding Address}" />
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
